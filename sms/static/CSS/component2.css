@@ -1,0 +1,209 @@
+/* ===== Buttons ===== */
+button,
+.summary-actions button {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 500px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(125, 109, 83, 0.2);
+}
+button:hover,
+.summary-actions button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(125, 109, 83, 0.25);
+}
+.button-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  box-shadow: none;
+}
+.button-secondary:hover {
+  background-color: rgba(240, 235, 227, 0.05);
+  box-shadow: 0 2px 8px rgba(125, 109, 83, 0.1);
+}
+.button-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 500px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(125, 109, 83, 0.3);
+}
+.button-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(125, 109, 83, 0.4);
+}
+
+
+section {
+  padding: 5rem;
+  transition: var(--transition);
+}
+section:nth-child(even) {
+  background-color: var(--bg-light);
+}
+.dark-mode section:nth-child(even) {
+  background-color: var(--bg-dark);
+}
+section h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+/* Cards */
+.card-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--secondary);
+  margin: 0;
+}
+.card-section + .card-section {
+  margin-top: 0;
+}
+.card-section.align-left .card {
+  margin-right: auto;
+}
+.card-section.align-right .card {
+  margin-left: auto;
+}
+.card {
+  background: var(--card-bg-light);
+  padding: 2rem 2.5rem;
+  border-radius: var(--border-radius-lg);
+  max-width: 700px;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+  color: var(--text-dark);
+  transition: 0.3s ease;
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--gray-200);
+}
+.dark-mode .card {
+  background: var(--card-bg-dark);
+  color: var(--text-light);
+  border-color: #4a4539;
+}
+.card h2 {
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+
+/* plan */
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.pricing-list li {
+  padding: 1.25rem;
+  background-color: rgba(143, 174, 139, 0.05);
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid var(--accent);
+}
+.dark-mode .pricing-list li {
+  background-color: rgba(143, 174, 139, 0.1);
+}
+.pricing-list li strong {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Reviews */
+.review {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid var(--accent);
+  background-color: rgba(143, 174, 139, 0.05);
+}
+.dark-mode .review {
+  background-color: rgba(143, 174, 139, 0.1);
+}
+.review:last-child {
+  margin-bottom: 0 !important;
+}
+.review p {
+  margin: 0 !important;
+}
+.review p em {
+  color: var(--text-muted);
+}
+
+/* Contact */
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.social-icons a {
+  color: var(--primary);
+  background: rgba(143, 174, 139, 0.1);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icons a:hover {
+  color: var(--text-light);
+  background: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(125, 109, 83, 0.25);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 2rem 5rem;
+  text-align: center;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}

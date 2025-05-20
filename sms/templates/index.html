@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Meeting Summarizer</title>
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/component1.css">
+    <link rel="stylesheet" href="../static/CSS/component2.css">
+    <link rel="stylesheet" href="../static/CSS/responsive.css">
+    <link rel="stylesheet" href="../static/CSS/variables.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4225a69c1e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="site-title">Smart Meeting Summarizer</span>
+        </div>
+        <ul class="nav-center">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#plans">Plans</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <div class="nav-right">
+            <button id="mode-toggle" class="mode-button">🌙</button>
+        </div>
+    </nav>
+
+    <div class="home">
+        <div class="home-content">
+            <p class="tagline">Turn Talk into takeaways</p>
+            <h1 class="home-title">Smart Meeting Summarizer</h1>
+            <p class="home-description">Smart Meeting Summarizer converts long and messy meeting transcripts into clear, actionable summaries.
+It helps you save time, capture key decisions, and stay focused on what really matters.</p>
+            <a href="#home" class="button-primary">Get Started</a>
+        </div>
+        <div class="home-image-container">
+            <img src="../static/CSS/business-owner-working-their-strategy.jpg" alt="Person working on meeting summary">
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="box">
+            <h1>SMS</h1>
+            <form method="POST" id="summaryForm">
+                <label for="transcript"><strong>Paste Transcript:</strong></label><br>
+                <textarea name="transcript" id="transcript" required>{{ transcript }}</textarea>
+
+                 </textarea><br><br>
+                <div class="button-group">
+                    <button type="submit">Summarize</button>
+                    <button type="button" id="clearbutton" class="button-secondary">Clear</button>
+                </div>
+                <div id="loader"> Generating summary...</div>
+            </form>
+
+            {% if summary %}    
+                <div id="summarySection">
+                    <h2> Summary</h2>
+                    
+                    <pre id="summary">{{ summary }}</pre>
+                    <div class="summary_detail">
+                        <span id="wordCount"></span>
+                        <span id="summaryTime"></span>
+                    </div>
+                    <div class="summary-actions">
+                       <button id="copybutton" title="Copy to clipboard"><i class="fa-solid fa-clipboard" style="color: #ffffff;"></i></button>
+                        <button id="downloadTxt" title="Download as .txt"><i class="fa-solid fa-file-export" style="color: #ffffff;"></i></button>
+                        <button id="downloadPdf" title="Download as .pdf"><i class="fa-solid fa-file-pdf" style="color: #e9ecf1;"></i></button>
+                    </div>  
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+   <section id="about" class="card-section align-left">
+    <div class="card">
+        <h2>About Smart Meeting Summarizer</h2>
+        <p><strong>Turn Talk into Takeaways.</strong></p>
+        <p>Smart Meeting Summarizer is your AI-powered productivity partner. Just paste your meeting transcript and get a clean, human-like summary in seconds. Whether you're a student, professional, or project team, SMS helps you extract the key points so you never miss what matters.</p>
+    </div>
+</section>
+
+<section id="plans" class="card-section align-right">
+    <div class="card">
+        <h2>Plans & Pricing (in ₹)</h2>
+        <ul class="pricing-list">
+            <li><strong>Free Plan</strong>  ₹0
+                <br>
+                <span class="text-muted">• 3 summaries/day
+                <br>
+                • Text download only</span></li>
+            <li><strong>Pro Plan</strong> ₹199/month
+                <br>
+                <span class="text-muted">• Unlimited summaries
+                <br>
+                • PDF export
+                <br>
+                • Priority processing</span></li>
+            
+        </ul>
+    </div>
+</section>
+
+<section id="reviews" class="card-section align-left">
+    <div class="card">
+        <h2>What Our Users Say</h2>
+        <div class="review">
+            <p><strong>⭐️⭐️⭐️⭐️⭐️</strong><br>"It saves me hours every week. As a team lead, I can't imagine meetings without it now!"<br><em>- Priya R., Project Manager</em></p>
+        </div>
+        <div class="review">
+            <p><strong>⭐️⭐️⭐️⭐️</strong><br>"Perfect for my college group projects. We focus on discussion and let SMS handle the notes."<br><em>- Aayush S., CS Student</em></p>
+        </div>
+        <div class="review">
+            <p><strong>⭐️⭐️⭐️⭐️⭐️</strong><br>"Finally, something that understands meeting fatigue. The summaries feel so human!"<br><em>- Neha K., HR Consultant</em></p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="card-section align-right">
+    <div class="card">
+        <h2>Contact Us</h2>
+        <p>Questions, feedback, or partnership inquiries?</p>
+        <p>Email us at <a href="mailto:aloysalfred2@gmail.com">aloysalfred2@gmail.com</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/aloys3125"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Smart Meeting Summarizer. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
+
