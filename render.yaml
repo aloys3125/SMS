@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: smart-meeting-summarizer
-    env: python
-    plan: free
-    buildCommand: "cd sms && pip install -r requirements.txt"
-    startCommand: "cd sms && gunicorn app:app"
