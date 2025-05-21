@@ -1,3 +1,5 @@
 Flask
 transformers
 torch
+nltk
+gunicorn
