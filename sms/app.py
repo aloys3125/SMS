@@ -1,4 +1,7 @@
 # sms/app.py
+@app.route("/ping")
+def ping():
+    return "Pong"
 
 from flask import Flask, render_template, request
 from summary_engine import generate_summary
