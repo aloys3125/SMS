@@ -1,7 +1,5 @@
 from transformers import pipeline
 import re
-
-# Start with summarizer = None (no pipeline yet)
 summarizer = None
 
 def preprocess_text(text):
@@ -31,8 +29,7 @@ def generate_summary(text, max_len=120, min_len=30):
     cleaned_text = preprocess_text(text)
     if not cleaned_text:
         return "Error: Text preprocessing failed."
-
-    # Lazy load the model when it's first needed
+     # lazy load 
     if summarizer is None:
         try:
             summarizer = pipeline("summarization", model="facebook/bart-large-cnn")

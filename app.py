@@ -1,5 +1,3 @@
-# sms/app.py
-
 
 from flask import Flask, render_template, request
 from summary_engine import generate_summary
